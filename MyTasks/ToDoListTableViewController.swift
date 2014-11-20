@@ -79,6 +79,12 @@ class ToDoListTableViewController: UITableViewController {
         tableView.reloadData()
         
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showAddTask" {
+            let addVC: AddToDoViewController = segue.destinationViewController as AddToDoViewController
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

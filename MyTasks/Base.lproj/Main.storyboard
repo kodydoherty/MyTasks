@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" title="My To-Do List" id="2Ly-d9-1zY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="56V-Fc-uSl">
                             <connections>
-                                <segue destination="pVA-9J-YGY" kind="showDetail" id="bmJ-3J-vPW"/>
+                                <segue destination="pVA-9J-YGY" kind="showDetail" identifier="showAddTask" id="bmJ-3J-vPW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -114,10 +114,13 @@
                                 <action selector="cancelButton:" destination="BYZ-38-t0r" id="1qX-rN-Z9r"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="LaN-LV-o55"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="LaN-LV-o55">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="BYZ-38-t0r" id="UwO-Uc-hGt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="doneButton" destination="LaN-LV-o55" id="sRM-nO-Thc"/>
                         <outlet property="textField" destination="oTS-EK-OPM" id="rEv-NK-UuQ"/>
                     </connections>
                 </viewController>

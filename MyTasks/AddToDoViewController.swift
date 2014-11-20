@@ -11,8 +11,12 @@ import UIKit
 class AddToDoViewController: UIViewController {
     var toDoItem: Todo?
 
-    @IBOutlet weak var doneButton: UIBarButtonItem!
+   
+  
+   
     @IBOutlet weak var textField: UITextField!
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -28,17 +32,17 @@ class AddToDoViewController: UIViewController {
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if sender as? NSObject != self.doneButton {
-            return
-        }
+
+    
+    @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
         if self.textField.text != nil {
             var todo = Todo()
             todo.task = textField.text
             self.toDoItem = todo
         }
+        
+    self.navigationController?.popViewControllerAnimated(true)
     }
-    
     // get rid of keyboard
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
